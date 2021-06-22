@@ -19,12 +19,18 @@ public class Login {
         loginbutton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                boolean status=true;
-                if(status)
-                {
-                    new Services();
+                boolean status=false;
+                if(accountNumber.getText()!=null && passwordField.getPassword()!=null) {
+                    status = true;
+                    if(status)
+                    {
+                        new Services();
+                    }
                 }
-                f.setVisible(false);
+                else
+                {
+                    JOptionPane.showMessageDialog(null,"Enter details");
+                }
             }
         });
         f.add(label1);

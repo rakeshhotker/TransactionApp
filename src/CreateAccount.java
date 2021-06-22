@@ -12,8 +12,9 @@ public class CreateAccount {
         aadharNumberInput.setBounds(300,100,150,50);
         JButton createAccount=new JButton("Create");
         createAccount.setBounds(200,200,300,50);
-        JButton afterLogin=new JButton("Login");
-        afterLogin.setBounds(200,300,300,50);
+        JButton afterAccountCreation=new JButton("Login");
+        afterAccountCreation.setBounds(200,300,300,50);
+        createAccount.setFocusPainted(false);
         createAccount.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -21,15 +22,16 @@ public class CreateAccount {
                 if(status)
                 {
                     createAccount.setText("Created Successfully!");
-                    f.add(afterLogin);
+                    f.add(afterAccountCreation);
+
                 }
             }
         });
-        afterLogin.addActionListener(new ActionListener() {
+        afterAccountCreation.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                f.setVisible(false);
                 new Login();
+                f.setVisible(false);
             }
         });
         f.add(createAccount);
